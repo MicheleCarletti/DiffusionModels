@@ -1,4 +1,4 @@
-# DiffusionModels# Diffusion Model on 2D Spiral Data
+# Diffusion Model on 2D Spiral Data
 
 A minimal and educational implementation of a **denoising diffusion model** on a synthetic 2D spiral dataset.  
 
@@ -97,6 +97,6 @@ This will:
 
 ##  License
 
-MIT License – Free to use, modify, and share. Attribution appreciated 🙌
+MIT License – Free to use, modify, and share. Attribution appreciated
 
 ---
