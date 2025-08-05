@@ -65,7 +65,7 @@ def train(model, data, alpha_hat, n_steps=1000, batch_size=128, epochs=100):
         for i in range(0, len(data), batch_size):   # For each batch
             idx = perm[i:i+batch_size]
             x0 = data[idx]
-            t = torch.randint(0, n_steps, (x0.size(0), ))   # Choose a random timestep
+            t = torch.randint(0, n_steps, (x0.size(0), ))   # Choose random timesteps
            
             alpha_hat_t = alpha_hat[t]
             noise = torch.randn_like(x0)
@@ -96,7 +96,7 @@ def sample(model, n_samples, n_steps, beta_schedule):
     with torch.no_grad():
         for t in reversed(range(n_steps)):
             t_batch = torch.full((n_samples, ), t)
-            z = torch.randn_like(x) if t > 0 else 0
+            z = torch.randn_like(x) if t > 0 else 0     # No noise is added in the last timestep
             beta_t = beta_schedule[t]
             alpha_t = alphas[t]
             alpha_hat_t = alpha_hat[t]
